@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "The palest ink is better than the best memory",
+    "version": "1.0",
+    "description": "The chrome pligin about take note",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "icons": {
+        "16": "images/browser/notebook.png",
+        "48": "images/browser/notebook.png",
+        "128": "images/browser/notebook.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "images/browser/notebook.png",
+            "38": "images/browser/notebook.png"
+        },
+        "default_title": "The palest ink is better than the best memory",
+        "default_popup": "index.html"
+    }
+}

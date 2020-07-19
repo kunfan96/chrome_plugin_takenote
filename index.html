@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="container">
+        <header class="container-title">
+            {{title}}
+        </header>
+
+        <ul :class="['container-body', { 'empty-data': noteList.length === 0 }]">
+            <li v-for="(item, index) in noteList">
+                <div contenteditable @click="searchIndex(index)" @blur="modifyContent">{{item.text}}</div>
+                <span class="delete-button" v-show="deleteStatus" @click="deleteItem(index)"></span>
+            </li>
+        </ul>
+
+        <footer class="buttons-container">
+            <button class="add-todolist" @click="addList">ADD TodoList</button>
+        </footer>
+    </div>
+</body>
+
+<script src="./js/vue.global.prod.js"></script>
+
+<script src="./js/xss.min.js"></script>
+
+<script src="./js/index.js"></script>
+</html>
