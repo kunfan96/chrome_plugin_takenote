@@ -28,6 +28,7 @@ Vue.createApp({
         toggleDeleteButton () {
             if (this.tmToggleDeleteButton) {
                 clearTimeout(this.tmToggleDeleteButton)
+                this.tmToggleDeleteButton = null
                 return
             }
 
