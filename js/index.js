@@ -26,7 +26,15 @@ Vue.createApp({
         },
 
         toggleDeleteButton () {
-            this.deleteStatus = !this.deleteStatus
+            if (this.tmToggleDeleteButton) {
+                clearTimeout(this.tmToggleDeleteButton)
+                return
+            }
+
+            this.tmToggleDeleteButton = setTimeout(() => {
+                this.deleteStatus = !this.deleteStatus
+                this.tmToggleDeleteButton = null
+            }, 300)
         },
 
         modifyContent (e) {
